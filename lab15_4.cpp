@@ -17,3 +17,25 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &x, int &y, int &z, int &w){
+    srand(time(0));
+    int num = 4;
+    int list[4] = {x, y, z, w};
+    
+    for(int i=0; i<num; i++){
+        swap(list[rand()%4], list[rand()%4]);
+    }
+    
+    x = list[0];
+    y = list[1];
+    z = list[2];
+    w = list[3];
+}
+
+void swap(int &a, int &b){
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
